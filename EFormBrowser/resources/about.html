@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Welcome to StinkyPete</title>
+    <style>
+    body {
+      font-family: Helvetica, Arial, Sanserif;
+      padding: 0;
+      margin: 1em;
+    }
+    .footer {
+      margin-top: 4em;
+      font-size: small;
+      color: gray;
+    }
+    .center {
+      text-align: center;
+    }
+    .clear {
+      clear: both;
+    }
+    .code {
+      font-family: Consolas, Courier, Monospace;
+      background-color: lightgray;
+      padding: 1em;
+      width: 80%;
+      margin: 0;
+      margin-left: 8%;
+    }
+    </style>
+    <script>
+      function initPage() {
+        var userAgent = document.getElementById('userAgent');
+        userAgent.innerHTML = getUserAgent();
+      }
+
+      function getUserAgent() {
+        return navigator.userAgent
+      }
+    </script>
+</head>
+<body onload="initPage()">
+    
+    <img src="stinkypete.jpg" style="float: right;" />
+
+    <h1>Welcome to StinkyPete</h1>
+    <p>An IE7-based web browser for viewing aging, cantankerous web pages and OnBase E-Forms up until 
+        version 15, which now uses an IE9-based rendering engine.</p>
+    
+    <p>This browser's <a href="javascript:void(0)" onclick="alert(getUserAgent())">User Agent</a> should match the User Agent of your OnBase installation.</p>
+    
+    <div id="userAgent" class="code clear"></div>
+    
+    <h2>Readme.md</h2>
+
+    <p>The readme.md file in the solution root describes how to create a custom start page, develop with all resources local, and deploy to OnBase, among other morsels.</p>
+
+    <div class="footer center clear">
+      StinkyPete is released under the <a href="license.txt">GNU GPL v3.0 License</a>.<br />
+      Copyright &copy; 2014 <a href="http://www.onelink.net">OneLink</a>
+    </div>
+    
+</body>
+</html>
