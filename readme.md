@@ -19,7 +19,7 @@ If you use it to browse real websites, expect to get frequent formatting and scr
        Go: Enter; Alt + G
   Refresh: Alt + R
      Home: Alt + H
-     Stop: Alt + X
+     Stop: Alt + S
 ```
 
 ## Custom Home Page
@@ -45,19 +45,6 @@ I have a Unity script that automatically imports only the changed HTML files as 
 ## Known Issues
 
 - Ability to change focus with the tab key is sometimes lost after loading a page from the address textbox. Clicking a control re-enables tab key. Navigating to new pages using links has no negative effect.
-
-## Potential Enhancements
-
-- Live reload (automatically reload page when files change)
-- Simulated Submit (see what keyword values would be)
-- Debug tools
-- Save/retrieve form element values for autofill
-- Unit test integration
-- Integrated web server
-- Multiple tabs
-- Better Keyboard Shortcuts
-- Browsing history improvements
-- Bookmarks
 
 
 ## Trademarks
