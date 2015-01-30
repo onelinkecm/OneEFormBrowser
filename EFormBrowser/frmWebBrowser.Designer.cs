@@ -62,6 +62,8 @@ namespace EFormBrowser
             this.cmdStop = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.cmdHome = new System.Windows.Forms.Button();
+            this.chkWatch = new System.Windows.Forms.CheckBox();
+            this.txtWatchPath = new System.Windows.Forms.TextBox();
             this.panelWb.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +73,7 @@ namespace EFormBrowser
             this.wb.Location = new System.Drawing.Point(0, 0);
             this.wb.MinimumSize = new System.Drawing.Size(20, 20);
             this.wb.Name = "wb";
-            this.wb.Size = new System.Drawing.Size(782, 510);
+            this.wb.Size = new System.Drawing.Size(782, 497);
             this.wb.TabIndex = 0;
             this.wb.DocumentTitleChanged += new System.EventHandler(this.wb_DocumentTitleChanged);
             this.wb.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.wb_Navigated);
@@ -83,9 +85,9 @@ namespace EFormBrowser
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelWb.Controls.Add(this.wb);
-            this.panelWb.Location = new System.Drawing.Point(1, 47);
+            this.panelWb.Location = new System.Drawing.Point(1, 60);
             this.panelWb.Name = "panelWb";
-            this.panelWb.Size = new System.Drawing.Size(782, 510);
+            this.panelWb.Size = new System.Drawing.Size(782, 497);
             this.panelWb.TabIndex = 7;
             // 
             // txtUrl
@@ -206,11 +208,35 @@ namespace EFormBrowser
             this.cmdHome.UseVisualStyleBackColor = true;
             this.cmdHome.Click += new System.EventHandler(this.cmdHome_Click);
             // 
+            // chkWatch
+            // 
+            this.chkWatch.AutoSize = true;
+            this.chkWatch.Enabled = false;
+            this.chkWatch.Location = new System.Drawing.Point(12, 37);
+            this.chkWatch.Name = "chkWatch";
+            this.chkWatch.Size = new System.Drawing.Size(58, 17);
+            this.chkWatch.TabIndex = 12;
+            this.chkWatch.Text = "&Watch";
+            this.chkWatch.UseVisualStyleBackColor = true;
+            this.chkWatch.CheckedChanged += new System.EventHandler(this.chkWatch_CheckedChanged);
+            // 
+            // txtWatchPath
+            // 
+            this.txtWatchPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtWatchPath.Location = new System.Drawing.Point(67, 34);
+            this.txtWatchPath.Name = "txtWatchPath";
+            this.txtWatchPath.Size = new System.Drawing.Size(561, 20);
+            this.txtWatchPath.TabIndex = 13;
+            this.txtWatchPath.TextChanged += new System.EventHandler(this.txtWatchPath_TextChanged);
+            // 
             // frmWebBrowser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 590);
+            this.Controls.Add(this.txtWatchPath);
+            this.Controls.Add(this.chkWatch);
             this.Controls.Add(this.cmdHome);
             this.Controls.Add(this.cmdStop);
             this.Controls.Add(this.lbAddress);
@@ -226,7 +252,7 @@ namespace EFormBrowser
             this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(270, 150);
             this.Name = "frmWebBrowser";
-            this.Text = "StinkyPete - IE7-based Web Browser";
+            this.Text = "StinkyPete - EForm Browser";
             this.Load += new System.EventHandler(this.frmWebBrowser_Load);
             this.panelWb.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -249,6 +275,8 @@ namespace EFormBrowser
         private System.Windows.Forms.Button cmdStop;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button cmdHome;
+        private System.Windows.Forms.CheckBox chkWatch;
+        private System.Windows.Forms.TextBox txtWatchPath;
     }
 }
 
