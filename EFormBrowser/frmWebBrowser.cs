@@ -37,6 +37,8 @@ namespace EFormBrowser
         private const string urlAbout = "resources/about.html";
         private const string urlStart = "resources/home.html";
 
+        private FileSystemWatcher watcher;
+        
         public frmWebBrowser()
         {
             InitializeComponent();
@@ -52,7 +54,51 @@ namespace EFormBrowser
             
             lblAlert.Text = "";
             Go(GetHomePage());
-           
+         
+            // File Watcher
+            watcher_init();
+            txtWatchPath.Text = Path.GetDirectoryName(GetHomePage());
+            chkWatch.Checked = false;
+        }
+
+        private void watcher_init()
+        {
+            watcher = new System.IO.FileSystemWatcher();
+            watcher.Filter = "*.*"; 
+            watcher.IncludeSubdirectories = true;
+            watcher.NotifyFilter = NotifyFilters.LastWrite;
+            watcher.Changed += new FileSystemEventHandler(watcher_FileChanged);
+            watcher.EnableRaisingEvents = false; //no path set yet
+        }
+
+        private bool WatcherState(bool Enable)
+        {
+            if (Enable && Directory.Exists(watcher.Path))
+            {
+                watcher.EnableRaisingEvents = true;
+            }
+            else 
+            {
+                watcher.EnableRaisingEvents = false;
+            }
+            return watcher.EnableRaisingEvents;
+        }
+
+        private string WatcherPath(string SetPath)
+        {
+            string ret = "";
+            string folder = Path.GetDirectoryName(SetPath);
+            if (Directory.Exists(folder))
+            {
+                watcher.Path = folder;
+                ret = folder;
+            }
+            return ret;
+        }
+
+        private void watcher_FileChanged(object sender, FileSystemEventArgs e)
+        {
+            wb.Refresh();
         }
 
         private string GetHomePage()
@@ -96,6 +142,8 @@ namespace EFormBrowser
         private void wb_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             txtUrl.Text = wb.Url.ToString();
+            //txtWatchPath.Text = WatcherPath(txtUrl.Text);
+            //chkWatch.Checked = WatcherState(chkWatch.Checked);
             wb.Focus();
         }
 
@@ -123,40 +171,6 @@ namespace EFormBrowser
             wb.GoForward();
         }
 
-        //private void actionKeys(object sender, KeyEventArgs e)
-        //{
-        //    string fmt = "keycode({0}); keydata({1}); keyvalue({2}); modifiers({3})";
-        //    lblAlert.Text = string.Format(fmt, e.KeyCode, e.KeyData, e.KeyValue, e.Modifiers);
-
-        //    switch (e.Modifiers)
-        //    {
-        //        case Keys.Control:
-        //            switch (e.KeyCode)
-        //            {
-        //                case Keys.R:
-        //                    wb.Refresh();
-        //                    lblAlert.Text += " Refresh();";
-        //                    break;
-        //            }
-        //            break;
-        //        case Keys.Alt:
-        //            switch (e.KeyCode)
-        //            {
-        //                case Keys.Left:
-        //                    wb.GoBack();
-        //                    break;
-        //                case Keys.Right:
-        //                    wb.GoForward();
-        //                    break;
-        //            }
-        //            break;
-        //        case Keys.Escape:
-        //            wb.Stop();
-        //            lblAlert.Text += " Stop();";
-        //            break;
-        //    }
-        //}
-
         private void cmdRefresh_Click(object sender, EventArgs e)
         {
                 wb.Refresh();
@@ -179,6 +193,30 @@ namespace EFormBrowser
         private void cmdHome_Click(object sender, EventArgs e)
         {
             Go(GetHomePage());
+        }
+
+        private void txtWatchPath_TextChanged(object sender, EventArgs e)
+        {
+            if (Directory.Exists(txtWatchPath.Text))
+            {
+                txtWatchPath.ForeColor = SystemColors.WindowText;
+                watcher.Path = txtWatchPath.Text;
+                chkWatch.Enabled = true;
+                chkWatch.Checked = true;
+            }
+            else
+            {
+                txtWatchPath.ForeColor = Color.Red;
+                chkWatch.Checked = false;
+                chkWatch.Enabled = false;
+            }
+
+            
+        }
+
+        private void chkWatch_CheckedChanged(object sender, EventArgs e)
+        {
+            WatcherState(chkWatch.Checked);
         }
 
     }
