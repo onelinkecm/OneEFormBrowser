@@ -46,6 +46,7 @@ I have a Unity script that automatically imports only the changed HTML files as 
 
 - Ability to change focus with the tab key is sometimes lost after loading a page from the address textbox. Clicking a control re-enables tab key. Navigating to new pages using links has no negative effect.
 
+- StinkyPete doesn't open pop-up windows itself, instead sending them to the system default browser.
 
 ## Trademarks
 
