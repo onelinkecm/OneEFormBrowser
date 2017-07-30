@@ -1,5 +1,4 @@
-﻿
-# StinkyPete - E-Form Browser
+﻿# StinkyPete - E-Form Browser
 
 StinkyPete is a simple web browser using the same Microsoft IE7-based WebBrowser control used by Hyland OnBase* (pre-version 15) for displaying E-Forms in the thick client and the Unity client. StinkyPete is also great for viewing other aging, cantankerous web pages.
 
