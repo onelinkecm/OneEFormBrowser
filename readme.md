@@ -1,12 +1,12 @@
-﻿# StinkyPete - E-Form Browser
+﻿# OneEFormBrowser - OneLink E-Form Browser
 
-StinkyPete is a simple web browser using the same Microsoft IE7-based WebBrowser control used by Hyland OnBase* (pre-version 15) for displaying E-Forms in the thick client and the Unity client. StinkyPete is also great for viewing other aging, cantankerous web pages.
+OneEFormBrowser is a simple web browser using the same Microsoft IE7-based WebBrowser control used by Hyland OnBase* (pre-version 15) for displaying E-Forms in the thick client and the Unity client. OneEFormBrowser is also great for viewing other aging, cantankerous web pages.
 
 If you've ever created e-forms you know what this means: finally, you can reliably develop, test, and maintain HTML E-Forms outside of OnBase without jumping through hoops (or as many).
 
 If you use it to browse real websites, expect to get frequent formatting and script errors, but that's the whole point!
 
-\* StinkyPete is in no way affiliated with Hyland Software.
+\* this project is not affiliated with Hyland Software.
 
 
 ## Keyboard Shortcuts
@@ -31,7 +31,7 @@ The file `home.html` is ignored by git.
 
 ## Live Reload
 
-When the the Watch checkbox is checked and the textbox contains a valid local file path (network and UNC won't work), StinkyPete will reload the browser window when any file changes in that folder or any of its sub-folders. 
+When the the Watch checkbox is checked and the textbox contains a valid local file path (network and UNC won't work), OneEFormBrowser will reload the browser window when any file changes in that folder or any of its sub-folders. 
 
 ## Keeping Everything Local
 
@@ -51,18 +51,17 @@ I have a Unity script that automatically imports only the changed HTML files as 
 
 - Ability to change focus with the tab key is sometimes lost after loading a page from the address textbox. Clicking a control re-enables tab key. Navigating to new pages using links has no negative effect.
 
-- StinkyPete doesn't open pop-up windows itself, instead sending them to the system default browser.
-- StinkyPete doesn't open pop-up windows itself, instead it sends them to the system default browser.
+- Browser doesn't open pop-up windows itself, instead sending them to the system default browser.
 
 
 ## Trademarks
 
-All product and company names are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them.
+All product and company names are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them or of them.
 
 OnBase® is a registered trademark of Hyland Software.
 
-StinkyPete™ is an open-source project sponsored by [OneLink.net](http://www.onelink.net).
+OneEFormBrowser is an open-source project sponsored by [OneLink.net](http://www.onelink.net).
 
 ## License
 
-StinkyPete is released under the [GNU GPL v3.0 License](http://opensource.org/licenses/GPL-3.0).
+OneEFormBrowser is released under the [GNU GPL v3.0 License](http://opensource.org/licenses/GPL-3.0).
