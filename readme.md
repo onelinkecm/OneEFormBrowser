@@ -1,4 +1,4 @@
-﻿# OneEFormBrowser - OneLink E-Form Browser
+# OneEFormBrowser - OneLink E-Form Browser
 
 OneEFormBrowser is a simple web browser using the same Microsoft IE7-based WebBrowser control used by Hyland OnBase* (pre-version 15) for displaying E-Forms in the thick client and the Unity client. OneEFormBrowser is also great for viewing other aging, cantankerous web pages.
 
@@ -56,12 +56,19 @@ I have a Unity script that automatically imports only the changed HTML files as 
 
 ## Trademarks
 
-All product and company names are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them or of them.
+All product and company names are trademarks or registered trademarks of their respective holders. Use of them does not imply any affiliation with or endorsement by them or of them.
 
-OnBase® is a registered trademark of Hyland Software.
+OnBase is a registered trademark of Hyland Software.
 
-OneEFormBrowser is an open-source project sponsored by [OneLink.net](http://www.onelink.net).
+This open-source project is sponsored by [OneLink.net](http://www.onelink.net).
+
 
 ## License
 
-OneEFormBrowser is released under the [GNU GPL v3.0 License](http://opensource.org/licenses/GPL-3.0).
+- The MIT License is a permissive license that is short and to the point. It lets people do anything they want with the the code as long as they provide attribution back to OneLink and don’t hold OneLink liable.
+
+- License text and attribution in LICENSE file in root of repository.
+
+- Fixes and enhancements are appreciated and recommended.
+
+- Those wishing to avoid attribution can contact OneLink for special excemptions.
